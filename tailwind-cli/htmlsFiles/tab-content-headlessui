@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Css App!!</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+  </head>
+  <body
+    class="bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-center items-center h-screen"
+  >
+    <div
+      x-data="{tabNo : 1 , activeClass : 'text-blue-600 bg-white'}"
+      class="max-w-md flex flex-col gap-y-2 w-full"
+    >
+      <!-- Tab header -->
+      <div
+        class="bg-blue-400 p-1 rounded-xl flex justify-between items-center gap-x-1 font-bold text-white"
+      >
+        <button
+          @click="tabNo = 1"
+          :class="tabNo === 1 ? activeClass : ''"
+          class="w-full hover:bg-blue-300 rounded-xl text-center p-2 focus:ring-2 focus:outline-none focus:ring-offset-2 focus:ring-white focus:ring-offset-blue-400 focus:ring-opacity-50"
+        >
+          Recent
+        </button>
+        <button
+          @click="tabNo = 2"
+          :class="tabNo === 2 ? activeClass : ''"
+          class="w-full hover:bg-blue-300 rounded-xl text-center p-2 focus:ring-2 focus:outline-none focus:ring-offset-2 focus:ring-white focus:ring-offset-blue-400 focus:ring-opacity-50"
+        >
+          Popular
+        </button>
+        <button
+          @click="tabNo = 3"
+          :class="tabNo === 3 ? activeClass : ''"
+          class="w-full hover:bg-blue-300 rounded-xl text-center p-2 focus:ring-2 focus:outline-none focus:ring-offset-2 focus:ring-white focus:ring-offset-blue-400 focus:ring-opacity-50"
+        >
+          Trending
+        </button>
+      </div>
+      <!-- Tab content -->
+      <div class="bg-white p-2 rounded-xl">
+        <!-- content  -1 -->
+        <div x-show="tabNo === 1">
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="font-bold text-sm mb-2">
+              Does drinking coffee make you smarter?
+            </p>
+            <p class="text-gray-400 text-xs">
+              5h ago &bull; 5 commentes &bull; 2 shares &bull;
+            </p>
+          </div>
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="font-bold text-sm mb-2">
+              So you have bought coffee...now what?
+            </p>
+            <p class="text-gray-400 text-xs">
+              2h ago &bull; 3 commentes &bull; 2 shares &bull;
+            </p>
+          </div>
+        </div>
+        <!-- content -2 -->
+        <div x-show="tabNo === 2">
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="font-bold text-sm mb-2">
+              Let tech making coffee better or worse?
+            </p>
+            <p class="text-gray-400 text-xs">
+              Jane 7 &bull; 29 commentes &bull; 16 shares &bull;
+            </p>
+          </div>
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="font-bold text-sm mb-2">
+              The most innovative things happening in coffee
+            </p>
+            <p class="text-gray-400 text-xs">
+              March 19 &bull; 24 commentes &bull; 12 shares &bull;
+            </p>
+          </div>
+        </div>
+        <!-- content  -3 -->
+        <div x-show="tabNo === 3">
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="font-bold text-sm mb-2">
+              Ask Me Anything: 10answers to your questions about coffee
+            </p>
+            <p class="text-gray-400 text-xs">
+              2d ago &bull; 9 commentes &bull; 5 shares &bull;
+            </p>
+          </div>
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="font-bold text-sm mb-2">
+              The worse advice we've ever heard about coffee
+            </p>
+            <p class="text-gray-400 text-xs">
+              4d ago &bull; 1 commentes &bull; 2 shares &bull;
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs"></script>
+  </body>
+</html>
+
